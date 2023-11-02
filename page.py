@@ -7,14 +7,18 @@ window = tk.Tk()
 textbox = tk.Text(window)
 textbox.pack()
 
+def checkPrice(price):
+    if price < 0:
+        print("Price must be positive")
+
 def button_click():
-    fig, ax = plot_page(textbox.get("1.0", "end-1c"))
-    ax.set_title('Plot from Textbox')
-    fig.canvas.draw()
+    plot_page(v92)
+    
 
 button = tk.Button(window, text="Plot", command=button_click)
 button.pack()
 
 if __name__ == '__main__':
-    insert_tables()
+    v92 = insert_tables()
+    checkPrice(v92)
     window.mainloop()
